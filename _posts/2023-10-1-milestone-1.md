@@ -218,5 +218,19 @@ Nous pourrions reprendre la logique évoquée aux deux points précédents, mais
 
 ## 4. Visualisations simples
 Test de graphique interactif exporté avec plotly.
-{% raw %}{% include test.html %}{% endraw %} 
+```python
+import pandas as pd
+import plotly.express as px
+
+df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/earthquakes-23k.csv')
+
+fig = px.density_mapbox(df, lat='Latitude', lon='Longitude', z='Magnitude', radius=10,
+                        center=dict(lat=0, lon=180), zoom=0,
+                        mapbox_style="stamen-terrain")
+fig.show()
+
+fig.write_html('./_includes/plotly_demo_1.html')
+```
+
+{% include plotly_demo_1.html %}
 ## 5. Visualisations avancées
