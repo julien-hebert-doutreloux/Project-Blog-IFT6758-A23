@@ -218,6 +218,7 @@ Nous pourrions reprendre la logique évoquée aux deux points précédents, mais
 
 ## 4. Visualisations simples
 Test de graphique interactif exporté avec plotly.
+
 ```python
 import pandas as pd
 import plotly.express as px
@@ -233,4 +234,5 @@ fig.write_html('./_includes/plotly_demo_1.html')
 ```
 
 {% include plotly_demo_1.html %}
+
 ## 5. Visualisations avancées
