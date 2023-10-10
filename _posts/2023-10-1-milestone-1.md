@@ -219,6 +219,6 @@ Nous pourrions reprendre la logique évoquée aux deux points précédents, mais
 ## 4. Visualisations simples
 Test de graphique interactif exporté avec plotly.
 
-{% include plotly_demo_1.html %}
+{% include test.html %}
 
 ## 5. Visualisations avancées
