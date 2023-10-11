@@ -3,6 +3,15 @@ layout: post
 title: Milestone 1
 ---
 
+## Table des matières
+
+1. [Acquisition de données](#acquisition_donnees)
+2. [Outils de débogage intéractif](#outil_debogage)
+3. [Nettoyage de données](#nettoyage_donnees)
+4. [Visualisations simples](#visualisations_simples)
+4. [Visualisations avancées](#visualisations_avancees)
+
+
 ## 1. Acquisition de données
 
 La LNH rend disponible de nombreuses données par le biais d'une API publique dont le end-point est le suivant : https://statsapi.web.nhl.com/api/v1/game/[GAME_ID]/feed/live/. Chaque requête envoyé à ce end-point renvoie un fichier json contenant des renseignements sur la partie en question.
@@ -16,6 +25,18 @@ Les parties ont un identifiant (GAME_ID) qui suit une structure comme suit: 2017
 </ul>
 
 Avec ces renseignements en main, il nous est donc possible d'effectuer une série de requêtes au serveur de la LNH afin de télécharger les données d'une saison en particulier. Par exemple, si nous désirons télécharger les données pour la saison régulière de 2017, il suffit d'aller chercher la partie 2017020001 (2017 pour l'année, 02 pour spécifier que nous voulons les parties de la saison régulière et 0001 pour spécifier le numéro de la première partie de la saison). Ensuite, nous pouvons envoyer une requête pour la partie 2017020002, puis 2017020003, 2017020004, etc.
+
+Un notebook est fournit dans le [GitHub](https://github.com/julien-hebert-doutreloux/Project-DS-IFT6758-A23/blob/master/notebooks/Milestone1.ipynb) pour accomplir l'acquisition de données. Les lignes correspondantes pour le téléchargement des données sont :
+```
+seasons = [2017, 2018, 2019, 2020, 2021]
+game_types = ('02','03')
+raw_data_path= os.path.join('.','..','data','raw','json')
+
+# une fonction pour ranger le fichier a chemin
+# raw_data_path est inclu dans la classe DA
+DA.download_season(seasons, game_types, raw_data_path)
+DA.download_play_type()
+```
 
 ## 2. Outil de débogage interactif
 
@@ -197,6 +218,23 @@ plt.show()
 ## 3. Nettoyer les données
 
 Les données qui nous sont envoyées par l'API de la LNH sont vastes. Pour un projet de sciences des données comme le nôtre, il faut premièrement décider de quelles données nous jugeons utiles. Par ailleurs, il nous faut aussi choisir une structure pour nos données. Dans notre cas, nous avons extrait les données pertinentes de chaque JSON et nous avons sauvegardés ces derniers sous la forme d'un fichier CSV. Par ailleurs, nous avons créer une classe GAME qui nous permet de convertir n'importe quel JSON brute en un dataframe pandas contenant les données utiles.
+
+
+Comme pour l'[aquisition de données](#acquisition_données) une section du notebook porte sur un tutoriel pour nettoyer les données fait par le code suivant:
+
+```
+DC.raw_data_path         = raw_data_path
+DC.play_type_json_path   = os.path.join(DC.raw_data_path, 'play_type.json')
+DC.considered_event_list = ['Shot', 'Goal']
+
+file_list = os.listdir(raw_data_path)
+processed_data_path = os.path.join('.', '..', 'data', 'processed', 'csv')
+for file in file_list:
+  if file.endswith('.json') and file != 'play_type.json':
+    game = Game(path_or_url = os.path.join(raw_data_path, file))
+    output_path = os.path.join(processed_data_path, f"{game.id}.csv")
+    game.clean.to_csv(output_path, sep=',')
+```
 
 Voici une ligne de notre dataframe à titre d'exemple:
 ![alt text](https://raw.githubusercontent.com/julien-hebert-doutreloux/Project-Blog-IFT6758-A23/main/public/df_exemple.jpg)
