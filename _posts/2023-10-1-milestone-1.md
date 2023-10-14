@@ -261,5 +261,9 @@ Test de graphique interactif exporté avec plotly.
 
 ## 5. Visualisations avancées
 
+{% include dropdown_2016.html %}
 {% include dropdown_2017.html %}
+{% include dropdown_2018.html %}
+{% include dropdown_2019.html %}
+{% include dropdown_2020.html %}
 
