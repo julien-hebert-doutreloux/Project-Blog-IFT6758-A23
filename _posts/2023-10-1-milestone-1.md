@@ -255,44 +255,41 @@ Nous pourrions reprendre la logique évoquée aux deux points précédents, mais
 </ol>
 
 ## 4. Visualisations simples
-#### Question 1
 
 ![Question 1](https://raw.githubusercontent.com/julien-hebert-doutreloux/Project-Blog-IFT6758-A23/main/public/q1.png)
 
 **Quel semble être le type de tir le plus dangereux?**  
-
-Nous pouvons observer clairement que le type de tir avec un plus grand taux de succès et celui du 'Deflected', mais si nous comparons avec la frequence de tir, alors nous dirons que le 'Tip-in' est le type de tir le plus dangerous, vu qu'il est beaucoup plus frequent que celui de son succesor.  
 **Important** Nous partons de la premise que le taux de succès d'un tir est égale à  <em><strong>but / (but + tir)</strong></em>
+
+Nous voyons que le type de tir avec un plus haut taux de succès est le "Deflected". Or, en tenant compte de la fréquence de tir, nous concluons que le "Tip-in" est le type de tir le plus dangereux, puisque que son taux de succès n'est inférieur que de 1% au "Deflected" (17% contre 18%), tandis que sa fréquence est largement supérieure (4449 contre 1450). 
 
 **Le type de tir le plus courant?**  
 
-Il est de tout évidence que le 'Wrist Shot' et le tir le plus frequent.  
+De tout évidence, le "Wrist Shot" eat le tir le plus fréquent.  
 
 **Pourquoi est-ce que vous avez choisi ce type de graphique?**  
-Car il demontre bien la frequence superposé entre le but et les tir, mais aussi son taux de succès, ce qui met en évidence la dangerosité d'un tir face à une autre.
+Car il demontre bien la fréquence superposée entre le but et les tirs
 
-#### Question 2
 ![Question 2a](https://raw.githubusercontent.com/julien-hebert-doutreloux/Project-Blog-IFT6758-A23/main/public/q2_a.png)
 ![Question 2b](https://raw.githubusercontent.com/julien-hebert-doutreloux/Project-Blog-IFT6758-A23/main/public/q2_b.png)
 ![Question 2c](https://raw.githubusercontent.com/julien-hebert-doutreloux/Project-Blog-IFT6758-A23/main/public/q2_c.png)
 
 **Quelle est la relation entre la distance à laquelle un tir a été effectué et la chance qu'il s'agisse d'un but ?**  
-Nous pouvons observer qu'il existe clairement deux pics dans les bins de distance dont il existe un taux de succès élévé ((0-50), (150-175)). Une évidence qu'au debut nous avait laissé un peu perplexe, car il est supposé qu'en général dans le hockey les but sont plus frequent à une court distance. Cela qu'en regardant aussi la frequence de tir nous nous sommes rendu compte que les tirs éffectués à un long distance ne sont pas si fréquent.
-Alors nous pouvons confirmer que les tirs à une court distance sont plus dangerous et frequents, que ceux à une longue distance.  
+Nous pouvons observer qu'il existe clairement deux pics dans les bins de distance pour lesquelles il existe un taux de succès élévé ((0-50), (150-175)). Cette donnée nous a initialement laissé un peu perplexe, car notre hypothèse était qu'en général au hockey les buts sont plus fréquent à une courte distance. Or, nous nous sommes rendus compte que les tirs effectués à une longue distance ne sont pas si fréquents.
+Aussi, nous pouvons confirmer que les tirs effectués à une court distance sont plus dangereux et fréquents que ceux effectués à une longue distance.  
 
 **Y a-t-il eu beaucoup de changements au cours des trois dernières saisons?**  
-Nous observons que la tendance s'est maintient au fur des saisons
+Non. Nous observons que la tendance s'est maintenue au cours des saisons.
 
-#### Question 3
 ![Question 3](https://raw.githubusercontent.com/julien-hebert-doutreloux/Project-Blog-IFT6758-A23/main/public/q3.png)
 
 **Quels sont les types de tirs les plus dangereux ?**  
-Vu que maintenant nous divisons le taux de succès (dangérosité) par type de tir et sa distance, alors nous observons qu'à certains distances quelques tirs sont plus dangerous que d'autres. Par exemple, dans le graph, nous pouvons vérifier que le type de tir "Wrap-around" est beaucoup plus dangerous à court distance qu'à long distance, tandis que le type de tir "Tip-in" a un taux de succès superieur à un plus grand distance, malgré qu'on sait qu'il n'est pas si fréquent à ce distance. Nous observons aussi qu'à certains distances, quelques types de tir ont aucun fréquent.
+Conmme nous divisons le taux de succès (dangerosité) par type de tir et sa distance, nous observons qu'à certaines distances des tirs sont plus dangereux que d'autres. Par exemple, dans le graphe, nous pouvons vérifier que le type de tir "Wrap-around" est beaucoup plus dangereux à courte distance qu'à longue distance, tandis que le type de tir "Tip-in" a un taux de succès supérieur à une plus grande distance, malgré qu'on sait qu'il n'est pas si fréquent à cette distance. Nous observons aussi qu'à certains distances, quelques types de tir n'ont aucune fréquence. Nous sommes aussi conscients du fait que quelques données aberrantes ont pu se glisser dans les données de la LNH. Par exemple, un "Wrap-around" est un tir qui s'effectue à une faible distance du but, puisqu'il nécessite que le joueur contourne par derrière le but adverse. Or, selon cette définition, un wrap-around ne devrait arriver que depuis une distance plus courte (moins de 50 pieds). 
 
 ## 5. Visualisations avancées
-La méthodologie pour produire ces visualisations avancées est la suivante. Premièrement, les données ont été prétraitées en enlevant les tirs n'ayant pas de location et les tirs qui ont été fait à partir de la zone défensive et en inversant le signe des coordonnées (x,y) (pour garder la symmétrie) des tirs ayant été fait du côté gauche de la patinoire par un joueur dont la zone défensive est du côté droit. Une fois le prétraitement des données fait, les données de location de tirs pour chaque équipe et pour la ligue ont été lissées à l'aide d'un estimateur de densité avec noyau gaussien et des prédictions de densité ont été faites pour chaque coordonnées (x,y) de la moitié de patinoire. Par la suite, ces densités ont été converties en tir moyen par heure en multipliant celles-ci par le nombre total de tir de l'équipe (ou de la ligue) divisé par le nombre total de parties jouées par l'équipe (ou par la ligue, dépendemment de si on fait le calcul pour une équipe ou pour la ligue). Finalement, ces résultats ont été multipliés par 100 pour obtenir des résultats finaux par 100 pieds carrés et, pour chaque équipe, la différence entre les résultats finaux de l'équipe et de la ligue ont été calculés.
+La méthodologie pour produire ces visualisations avancées est la suivante. Premièrement, les données ont été prétraitées en enlevant les tirs n'ayant pas de location et les tirs qui ont été fait à partir de la zone défensive et en inversant le signe des coordonnées (x,y) (pour garder la symétrie) des tirs ayant été fait du côté gauche de la patinoire par un joueur dont la zone défensive est du côté droit. Une fois le prétraitement des données fait, les données de location de tirs pour chaque équipe et pour la ligue ont été lissées à l'aide d'un estimateur de densité avec noyau gaussien et des prédictions de densité ont été faites pour chaque coordonnée (x,y) de la moitié de patinoire. Par la suite, ces densités ont été converties en tir moyen par heure en multipliant celles-ci par le nombre total de tir de l'équipe (ou de la ligue) divisé par le nombre total de parties jouées par l'équipe (ou par la ligue, dépendamment de si on fait le calcul pour une équipe ou pour la ligue). Finalement, ces résultats ont été multipliés par 100 pour obtenir des résultats finaux par 100 pieds carrés et, pour chaque équipe, la différence entre les résultats finaux de l'équipe et de la ligue a été calculée.
 
-Note: Pour chacune des visualisations avancées ci-dessous, il faudra cliquer sur le dropdown bouton au moins une fois avant de voir les vrai graphiques (bug plotly)
+Note: Pour chacune des visualisations avancées ci-dessous, il faudra cliquer sur le dropdown bouton au moins une fois afin d'afficher l'image de la patinoire (bug plotly)
 
 {% include dropdown_2016.html %}
 {% include dropdown_2017.html %}
@@ -300,3 +297,17 @@ Note: Pour chacune des visualisations avancées ci-dessous, il faudra cliquer su
 {% include dropdown_2019.html %}
 {% include dropdown_2020.html %}
 
+# Réflexions sur les visualisations avancées
+<ol>
+  <li>
+    Nous pouvons premièrement voir si une équipe effectue davantage de tirs aux buts à partir d'une zone en particulier comparativement aux autres équipes de la LNH pour une saison donnée. Nous pouvons constater quelles sont les zones fortes et les zones faibles pour l'attaque d'une équipe. Nous pouvons aussi comparer une équipe à elle-même à travers les saisons 2016 à 2021.
+  </li>
+  <li>
+    Pour la saison 2016-2017, nous voyons que les Avalanches du Colorado ont une attaque assez faible, surtout devant le but. Pour la saison 2020-2021 au contraire, les Avalanches du Colorado effectuent     
+    davantage de tirs au but que la moyenne de la LNH sur une grande partie de la patinoire. Ces renseignements corroborent les résultats des classements pour ces deux saisons respectives. En 2016-2017 en 
+    effet, les Avalanches ont fini dernier de leur division avec 22 victoires et 56 défaites, tandis qu'en 2020-2021, ils ont fini premier de leur division avec 39 victoires et 13 défaites.
+  </li>
+  <li>
+    Le Lightning de Tampa Bay a remporté la coupe Stanley deux saisons consécutives (2020 et 2021). Pour la saison 2020, nous voyons qu'ils effectuent davantage de tirs au but que la moyenne de la LNH devant le filet adverse. Le Lightning semble être une équipe avec une bonne aile droite, mais sur le reste de la patinoire, elle ne semble pas avoir une attaque particulièrement dominante. Pour cette même saison, ils ont obtenu 36 victoires et 17 défaites, ce qui les a hissé à la 3e position au classement de leur division. Ils ont donc été une équipe forte, mais pas autant que les Avalanches, qui ont obtenu un meilleur ratio de victoires par partie jouée (75% pour COL contre 67.9% pour TBL). Or, ce n'est pas toujours l'équipe qui a été la plus forte durant la saison qui remporte nécessairement la coupe Stanley. Pour la saison 2020, Colorado s'est fait éliminer en deuxième ronde des séries éliminatoires. Toutes sortes de données peuvent entrer en ligne de compte pour expliquer un tel phénomène, par exemple un joueur étoile qui se blesse avec les séries. Un graphique ne peut donc pas tout expliquer des forces et des faiblesses d'une équipe. Par exemple, nous voyons qu'une équipe comme les sabres de Buffalo semble avoir une attaque globalement assez faible pour la saison 2020. Or, il est difficle d'expliquer un tel résultat avec nos graphiques. Nous pouvons que le constater. Pour pousser l'analyser plus loin, il faudrait étudier pour chaque équipe des résultats comme le nombre de pénalités par match, le ratio de buts par tir, etc. Nous pourrions aussi produire le graphique inverse, c'est-à-dire combien de tirs ont été effectués contre une équipe dans la zone défensive. Nous pourrions alors obtenir une information cruciale, car bien qu'une équipe puisse tirer souvent sur le but adverse, elle doit veiller à minimiser le nombre de tirs envoyés contre son propre but. 
+  </li>
+</ol>
