@@ -255,9 +255,34 @@ Nous pourrions reprendre la logique évoquée aux deux points précédents, mais
 </ol>
 
 ## 4. Visualisations simples
-Test de graphique interactif exporté avec plotly.
 
-{% include test.html %}
+![Question 1](https://raw.githubusercontent.com/julien-hebert-doutreloux/Project-Blog-IFT6758-A23/main/public/q1.png)
+
+**Quel semble être le type de tir le plus dangereux?**  
+
+Nous pouvons observer clairement que le type de tir avec un plus grand taux de succès et celui du 'Deflected', mais si nous comparons avec la frequence de tir, alors nous dirons que le 'Tip-in' est le type de tir le plus dangerous, vu qu'il est beaucoup plus frequent que celui de son succesor.  
+**Le type de tir le plus courant?**  
+
+Il est de tout évidence que le 'Wrist Shot' et le tir le plus frequent.  
+
+**Pourquoi est-ce que vous avez choisi ce type de graphique?**  
+Car il demontre bien la frequence superposé entre le but et les tir
+
+![Question 2a](https://raw.githubusercontent.com/julien-hebert-doutreloux/Project-Blog-IFT6758-A23/main/public/q2_a.png)
+![Question 2b](https://raw.githubusercontent.com/julien-hebert-doutreloux/Project-Blog-IFT6758-A23/main/public/q2_b.png)
+![Question 2c](https://raw.githubusercontent.com/julien-hebert-doutreloux/Project-Blog-IFT6758-A23/main/public/q2_c.png)
+
+**Quelle est la relation entre la distance à laquelle un tir a été effectué et la chance qu'il s'agisse d'un but ?**  
+Nous pouvons observer qu'il existe clairement deux pics dans les bins de distance dont il existe un taux de succès élévé ((0-50), (150-175)). Une évidence qu'au debut nous avait laissé un peu perplexe, car il est supposé qu'en général dans le hockey les but sont plus frequent à une court distance. Cela qu'en regardant aussi la frequence de tir nous nous sommes rendu compte que les tirs éffectués à un long distance ne sont pas si fréquent.
+Alors nous pouvons confirmer que les tirs à une court distance sont plus dangerous et frequents, que ceux à une longue distance.  
+
+**Y a-t-il eu beaucoup de changements au cours des trois dernières saisons?**  
+Nous observons que la tendance s'est maintient au fur des saisons
+
+![Question 3](https://raw.githubusercontent.com/julien-hebert-doutreloux/Project-Blog-IFT6758-A23/main/public/q3.png)
+
+**Quels sont les types de tirs les plus dangereux ?**  
+Vu que maintenant nous divisons le taux de succès (dangérosité) par type de tir et sa distance, alors nous observons qu'à certains distances quelques tirs sont plus dangerous que d'autres. Par exemple, dans le graph, nous pouvons vérifier que le type de tir "Wrap-around" est beaucoup plus dangerous à court distance qu'à long distance, tandis que le type de tir "Tip-in" a un taux de succès superieur à un plus grand distance, malgré qu'on sait qu'il n'est pas si fréquent à ce distance. Nous observons aussi qu'à certains distances, quelques types de tir ont aucun fréquent.
 
 ## 5. Visualisations avancées
 
