@@ -1,3 +1,8 @@
+# Lien vers notre blogue
+
+
+[https://julien-hebert-doutreloux.github.io/Project-Blog-IFT6758-A23/](https://julien-hebert-doutreloux.github.io/Project-Blog-IFT6758-A23/)
+
 # IFT6758 Blog Post Template
 
 This blog post template is based off of the [Lanyon](https://github.com/poole/lanyon) template (the original readme can be found at the bottom).
