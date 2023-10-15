@@ -266,7 +266,7 @@ Nous pouvons observer clairement que le type de tir avec un plus grand taux de s
 Il est de tout évidence que le 'Wrist Shot' et le tir le plus frequent.  
 
 **Pourquoi est-ce que vous avez choisi ce type de graphique?**  
-Car il demontre bien la frequence superposé entre le but et les tir
+Car il demontre bien la frequence superposé entre le but et les tir, mais aussi son taux de succès, ce qui met en évidence la dangerosité d'un tir face à une autre.
 
 ![Question 2a](https://raw.githubusercontent.com/julien-hebert-doutreloux/Project-Blog-IFT6758-A23/main/public/q2_a.png)
 ![Question 2b](https://raw.githubusercontent.com/julien-hebert-doutreloux/Project-Blog-IFT6758-A23/main/public/q2_b.png)
