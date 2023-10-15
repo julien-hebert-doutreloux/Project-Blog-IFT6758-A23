@@ -40,16 +40,14 @@ DA.download_play_type()
 
 ## 2. Outil de débogage interactif
 
-Nous avons créé un outil de débogage interactif. Son principe est assez simple. L'utilisateur peut sélectionner les parties de la saison régulière ou les parties des séries élimiatoires. Ensuite, il peut choisir la saison de son choix (2017, 2018, 2019, 2020 ou 2021). Ces deux options permettent d'ajuster le contenu d'un menu déroulant contenant les parties (menu déroulant GAME_ID). Par exemple, en choisissant "Playoffs" et "2018", le menu déroulant GAME_ID ne contiendra que les parties des séries éliminatoires de 2018. Ensuite, il nous suffit de choisir une partie qui nous intéresse. Un <i>int slider</i> (EVENT ID) nous permet de parcourir tous les événements de la partie sélectionnée. Un petit tableau HTML nous indique les équipes et le score pour chaque partie. Par ailleurs, un tableau interactif dessiné avec la librairie matplotlib nous permet de visualiser la location sur la patinoire et la description de chaque événement.
+Nous avons créé un outil de débogage interactif. Son principe est assez simple. L'utilisateur peut sélectionner les parties de la saison régulière ou les parties des séries élimiatoires. Ensuite, il peut choisir la saison de son choix (2017, 2018, 2019, 2020 ou 2021). Ces deux options permettent d'ajuster le contenu d'un menu déroulant contenant les parties (menu déroulant GAME_ID). Par exemple, en choisissant "Playoffs" et "2018", le menu déroulant GAME_ID ne contiendra que les parties des séries éliminatoires de 2018. Ensuite, il nous suffit de choisir une partie qui nous intéresse. Un <i>int slider</i> (EVENT ID) nous permet de parcourir tous les événements de la partie sélectionnée. Un petit tableau HTML nous indique les équipes et le score pour chaque partie. Par ailleurs, un tableau interactif dessiné avec la librairie matplotlib nous permet de visualiser la location sur la patinoire et la description de chaque événement. Finalement, un bouton "Default Values" nous permet de retourner aux valeurs par défaut pour notre outil, soit le premier événement de la première partie régulière de la saison 2017.
 
 ```python
 %matplotlib notebook
 from ipywidgets import *
 import matplotlib.pyplot as plt
 from matplotlib import image
-import numpy as np
-import csv
-import ast
+
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
@@ -63,6 +61,7 @@ game_dic = {
 
 # Helper functions
 
+# Retourne une liste de parties à afficher dans le drop-down Game ID
 def display_game(var):
     season = B.value
     game_type = A.value
@@ -75,9 +74,11 @@ def display_game(var):
             game_list.append(temp_name)
       
     C.options = game_list
+    C.value = game_list[0]
 
     return game_list
 
+# Fonction pour mettre à jour le tableau des scores ainsi que le range du int slider Event ID
 def update_int_slider(game_list):
     
     raw_data_path= os.path.join('.','..','data','raw','json')
@@ -113,6 +114,7 @@ def update_int_slider(game_list):
         print(file_path + " est un fichier non existant")
     return
 
+# Fonction pour mettre à jour le graphe
 def update_graph(game_list):
 
     raw_data_path= os.path.join('.','..','data','raw','json')
@@ -156,6 +158,7 @@ D = IntSlider(value=0, min=0, max=1, step=1, description='Event ID')
 initial_game_list = display_game(0)
 D.observe(update_graph, names='value')
 
+# Valeurs par défaut des widgets
 A.default_value = 'Regular Season'
 B.default_value = "2017"
 C.default_value = "2017020001"
@@ -165,6 +168,7 @@ defaulting_widgets = [A,B,C,D]
 
 default_value_button = Button(description='Default Values')
 
+# Fonction pour réinitialiser les widgets
 def set_default(button):
     for widget in defaulting_widgets:
         widget.value = widget.default_value
@@ -201,7 +205,10 @@ info_text.value="""
 
 plt.rcParams["figure.figsize"] = [7.00, 3.50]
 plt.rcParams["figure.autolayout"] = True
-im = plt.imread("C:\\Users\\joels\\PycharmProjects\\Project-DS-IFT6758-A23\\figures\\nhl_rink.png")
+
+img_data_path = os.path.join('.','..', 'figures')
+img_file_name = "nhl_rink.png"
+im = plt.imread(os.path.join(img_data_path, img_file_name))
 
 fig, axes = plt.subplots()
 
