@@ -51,8 +51,8 @@ from matplotlib import image
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
-dir_path = os.path.join('.','..','data\processed\csv')
-files = os.listdir(dir_path)
+raw_data_path = os.path.join('.','..','data','raw','json')
+files = os.listdir(raw_data_path)
 
 game_dic = {
   "Regular Season": "02",
@@ -68,7 +68,7 @@ def display_game(var):
     game_list = []
     
     for file in files:
-        temp_name = file.replace('.csv', '')
+        temp_name = file.replace('.json', '')
         
         if temp_name[:4] == str(season) and temp_name[4:-4] == game_dic[str(game_type)]:
             game_list.append(temp_name)
@@ -81,7 +81,6 @@ def display_game(var):
 # Fonction pour mettre à jour le tableau des scores ainsi que le range du int slider Event ID
 def update_int_slider(game_list):
     
-    raw_data_path= os.path.join('.','..','data','raw','json')
     file = C.value+".json"
     file_path = os.path.join(raw_data_path, file)
 
@@ -117,7 +116,6 @@ def update_int_slider(game_list):
 # Fonction pour mettre à jour le graphe
 def update_graph(game_list):
 
-    raw_data_path= os.path.join('.','..','data','raw','json')
     file = C.value+".json"
     file_path = os.path.join(raw_data_path, file)
 
@@ -146,7 +144,7 @@ info_text = widgets.HTML()
 A = Dropdown(options=["Regular Season", "Playoffs"], value='Regular Season', description='Game Type')
 A.observe(display_game)
 
-B = Dropdown(options=["2016" "2017", "2018", "2019", "2020"], value="2016", description='Season')
+B = Dropdown(options=["2016", "2017", "2018", "2019", "2020"], value="2016", description='Season')
 B.observe(display_game)
 
 C = Dropdown(options=[], description='Game ID')
