@@ -264,7 +264,8 @@ Nous pourrions reprendre la logique évoquée aux deux points précédents, mais
 ![Question 1](https://raw.githubusercontent.com/julien-hebert-doutreloux/Project-Blog-IFT6758-A23/main/public/q1.png)
 
 **Quel semble être le type de tir le plus dangereux?**  
-**Important** Nous partons de la prémisse que le taux de succès d'un tir est égae à  <em><strong>but / (but + tir)</strong></em>
+**Important** Nous partons de la prémisse que le taux de succès d'un tir est égal à :
+<em><strong>but / (but + tir)</strong></em>
 
 Nous voyons que le type de tir avec le plus haut taux de succès est le "Deflected". Or, en tenant compte de la fréquence de tir, nous concluons que le "Tip-in" est le type de tir le plus dangereux, puisque que son taux de succès n'est inférieur que de 1% au "Deflected" (17% contre 18%), tandis que sa fréquence est largement supérieure (4449 contre 1450). 
 
@@ -309,16 +310,14 @@ Note: Pour chacune des visualisations avancées ci-dessous, il faudra cliquer su
   </li>
   
   <li>
-    Pour la saison 2016-2017, nous voyons que les Avalanches du Colorado ont une attaque assez faible, surtout devant le but. Pour la saison 2020-2021 au contraire, les Avalanches du Colorado effectuent     
-    davantage de tirs au but que la moyenne de la LNH sur une grande partie de la patinoire. Ces renseignements corroborent les résultats des classements pour ces deux saisons respectives. En 2016-2017 en 
-    effet, les Avalanches ont fini dernier de leur division avec 22 victoires et 56 défaites, tandis qu'en 2020-2021, ils ont fini premier de leur division avec 39 victoires et 13 défaites.
+    Pour la saison 2016-2017, nous voyons que les Avalanches du Colorado ont une attaque assez faible, surtout devant le but. Pour la saison 2020-2021 au contraire, les Avalanches du Colorado effectuent davantage de tirs au but que la moyenne de la LNH sur une grande partie de la patinoire. Ces renseignements corroborent les résultats des classements pour ces deux saisons respectives. En 2016-2017 en effet, les Avalanches ont fini dernier de leur division avec 22 victoires et 56 défaites, tandis qu'en 2020-2021, ils ont fini premier de leur division avec 39 victoires et 13 défaites.
   </li>
   
   <li>
     Le Lightning de Tampa Bay a remporté la coupe Stanley deux saisons consécutives (2020 et 2021). Pour la saison 2020, nous voyons qu'ils effectuent davantage de tirs au but que la moyenne de la LNH devant le filet adverse. Le Lightning semble être une équipe avec une bonne aile droite, mais sur le reste de la patinoire, elle ne semble pas avoir une attaque particulièrement dominante. Pour cette même saison, ils ont obtenu 36 victoires et 17 défaites, ce qui les a hissé à la 3e position au classement de leur division. Ils ont donc été une équipe forte, mais pas autant que les Avalanches, qui ont obtenu un meilleur ratio de victoires par partie jouée (75% pour COL contre 67.9% pour TBL). 
-    
+    <br>
     Or, ce n'est pas toujours l'équipe qui a été la plus forte durant la saison qui remporte nécessairement la coupe Stanley. Pour la saison 2020, Colorado s'est fait éliminer en deuxième ronde des séries éliminatoires. Toutes sortes de données peuvent entrer en ligne de compte pour expliquer un tel phénomène, par exemple un joueur étoile qui se blesse avec les séries. Un graphique ne peut donc pas tout expliquer des forces et des faiblesses d'une équipe. Par exemple, nous voyons qu'une équipe comme les sabres de Buffalo semble avoir une attaque globalement assez faible pour la saison 2020. Or, il est difficle d'expliquer un tel résultat avec nos graphiques. Nous pouvons que le constater. 
-    
+    <br>
     Pour pousser l'analyser plus loin, il faudrait étudier pour chaque équipe des résultats comme le nombre de pénalités par match, le ratio de buts par tir, etc. Nous pourrions aussi produire le graphique inverse, c'est-à-dire combien de tirs ont été effectués contre une équipe dans la zone défensive. Nous pourrions alors obtenir une information cruciale, car bien qu'une équipe puisse tirer souvent sur le but adverse, elle doit veiller à minimiser le nombre de tirs envoyés contre son propre but. 
   </li>
 </ol>
