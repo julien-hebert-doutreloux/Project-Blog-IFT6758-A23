@@ -255,12 +255,15 @@ Nous pourrions reprendre la logique évoquée aux deux points précédents, mais
 </ol>
 
 ## 4. Visualisations simples
+#### Question 1
 
 ![Question 1](https://raw.githubusercontent.com/julien-hebert-doutreloux/Project-Blog-IFT6758-A23/main/public/q1.png)
 
 **Quel semble être le type de tir le plus dangereux?**  
 
 Nous pouvons observer clairement que le type de tir avec un plus grand taux de succès et celui du 'Deflected', mais si nous comparons avec la frequence de tir, alors nous dirons que le 'Tip-in' est le type de tir le plus dangerous, vu qu'il est beaucoup plus frequent que celui de son succesor.  
+**Important** Nous partons de la premise que le taux de succès d'un tir est égale à  <em><strong>but / (but + tir)</strong></em>
+
 **Le type de tir le plus courant?**  
 
 Il est de tout évidence que le 'Wrist Shot' et le tir le plus frequent.  
@@ -268,6 +271,7 @@ Il est de tout évidence que le 'Wrist Shot' et le tir le plus frequent.
 **Pourquoi est-ce que vous avez choisi ce type de graphique?**  
 Car il demontre bien la frequence superposé entre le but et les tir, mais aussi son taux de succès, ce qui met en évidence la dangerosité d'un tir face à une autre.
 
+#### Question 2
 ![Question 2a](https://raw.githubusercontent.com/julien-hebert-doutreloux/Project-Blog-IFT6758-A23/main/public/q2_a.png)
 ![Question 2b](https://raw.githubusercontent.com/julien-hebert-doutreloux/Project-Blog-IFT6758-A23/main/public/q2_b.png)
 ![Question 2c](https://raw.githubusercontent.com/julien-hebert-doutreloux/Project-Blog-IFT6758-A23/main/public/q2_c.png)
@@ -279,6 +283,7 @@ Alors nous pouvons confirmer que les tirs à une court distance sont plus danger
 **Y a-t-il eu beaucoup de changements au cours des trois dernières saisons?**  
 Nous observons que la tendance s'est maintient au fur des saisons
 
+#### Question 3
 ![Question 3](https://raw.githubusercontent.com/julien-hebert-doutreloux/Project-Blog-IFT6758-A23/main/public/q3.png)
 
 **Quels sont les types de tirs les plus dangereux ?**  
