@@ -287,6 +287,7 @@ Vu que maintenant nous divisons le taux de succès (dangérosité) par type de t
 ## 5. Visualisations avancées
 La méthodologie pour produire ces graphiques est la suivante. Premièrement, nous avons prétraités les données en enlevant les tirs n'ayant pas de location et les tirs qui ont été fait à partir de la zone défensive et en inversant le signe des coordonnées (x,y) (pour garder la symmétrie) des tirs ayant été fait du côté gauche de la patinoire par un joueur dont la zone défensive est à droite. Une fois le prétraitement des données fait, les données de location de tirs pour chaque équipe et pour la ligue ont été lissées à l'aide d'un estimateur de densité avec noyau gaussien. Ensuite, des prédictions de densité ont été faites pour chaque coordonnées (x,y) de la moitié de patinoire, puis ces densités ont été converties en tir moyen par heure en multipliant celles-ci par le nombre total de tir de l'équipe ou de la ligue divisé par le nombre total de parties jouées par l'équipe ou dans la ligue au complet (dependemment si on fait le calcul pour une équipe ou pour la ligue). Par la suite, ces résultats ont été multipliés par 100 pour avoir des résultats finaux par 100 pieds carrés. Finalement, pour chaque équipe on a pris la différence entre les résultats finaux de l'équipe et de la ligue. 
 Note: Pour chacun des graphiques ci-dessous, il faudra cliquer sur le dropdown bouton au moins une fois avant de voir les vrai graphiques (bug plotly)
+
 {% include dropdown_2016.html %}
 {% include dropdown_2017.html %}
 {% include dropdown_2018.html %}
