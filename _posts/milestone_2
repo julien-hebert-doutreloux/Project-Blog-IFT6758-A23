@@ -16,6 +16,11 @@ title: Milestone 2
 
 ## 2. Modèles de base
 
+Notre premier modèle de base (entraîné seulement avec la distance du but) a une précision de 0.905. Or, quand nous regardons les prédictions de notre modèle, 
+nous remarquons qu'il prédit toujours qu'un tir ne résultera pas en un but. Évidemment, comme la plupart des tirs ne résultent pas en un but, notre modèle obtient
+une excellente précision. Toutefois, nous souhaitons être capable de prédire les buts. Pour la suite de l'expérience, il nous faudra donc procéder
+à un rééquilibrage des données.
+
 ## 3. Ingénierie des caractéristiques II
 
 ## 4. Modèles avancés
